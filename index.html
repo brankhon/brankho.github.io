@@ -182,6 +182,38 @@
         max-width: 100%;
       }
 
+      .nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: #39ff14;
+        font-size: 22px;
+        cursor: pointer;
+      }
+
+      @media (max-width: 600px) {
+        .nav-toggle {
+          display: block:
+        }
+        
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 52px;
+          left: 0;
+          right: 0;
+          background: #0a0e0a;
+          border-bottom: 1px solid #1e2e1e;
+          padding: 1rem 2rem;
+          gap: 1rem;
+        }
+
+        .nav-links.open {
+          display: flex;
+        }
+      }
+          
       
     </style>
   </head>
@@ -190,11 +222,13 @@
 
     <nav>
       <a href="#hero" class="nav-logo">~/brankhon</a>
-      <u1 class="nav-links">
-        <li><a href="#skills">./skills</a></li>
-        <li><a href="#projects">./projects</a></li>
-        <li><a href="#experience">./experience</a></li>
-        <li><a href="#contact">./contact</a></li>
+      <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+      <u1 class="nav-links" id="nav-links">
+        <li><a href="#skills" onclick="toggleMenu()">./skills</a></li>
+        <li><a href="#projects" onclick="toggleMenu()">./projects</a></li>
+        <li><a href="#experience" onclick="toggleMenu()">./experience</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">./contact</a></li>
+      </u1>
     </nav>
 
     
@@ -311,6 +345,13 @@
     <footer>
       <p>~/brankho &mdash; made with HTML & CSS in GitHub </p>
     </footer>
+
+    <script>
+      function toggleMenu() {
+        document.getElementById('nav-links').classList.toggle('open');
+      }
+    </script>
+
     
   </body>
 </html>
