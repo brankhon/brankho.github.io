@@ -138,16 +138,19 @@
       nav {
         position: sticky;
         top: 0;
-        left: 0;
-        right: 0;
-        z-index: 100;
+        z-index: 1000;
         background: #0a0e0a;
         border-bottom: 1px solid #1e2e1e;
-        padding: 0 2rem;
+        padding:
+          env(safe-area-inset-top)
+          2rem
+          0
+          2rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
         min-height: 52px;
+        box-sizing: border-box;
       }
 
       .nav-logo {
@@ -227,17 +230,6 @@
   </head>
   
   <body>
-
-    <div style="
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: env(safe-area-inset-top);
-      background: #0a0e0a;
-      z-index: 9999;
-      ">
-    </div>
 
     <nav>
       <a href="#hero" class="nav-logo">~/brankhon</a>
@@ -370,9 +362,6 @@
         document.getElementById('nav-links').classList.toggle('open');
       }
 
-      window.addEventListener('load', function() {
-        document.querySelector('nav').style.paddingTop = 'env(safe-area-inset-top)';
-      });
     </script>                 
                              
 
