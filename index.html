@@ -225,12 +225,24 @@
         }
       }
           
+      .safe-top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: env(safe-area-inset-top);
+        background: #0a0e0a;
+        z-index: 9999;
+        pointer-events: none;
+      }
       
     </style>
   </head>
   
   <body>
 
+    <div class="safe-top"></div>
+    
     <nav>
       <a href="#hero" class="nav-logo">~/brankhon</a>
       <button class="nav-toggle" onclick="toggleMenu()">☰</button>
