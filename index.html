@@ -354,7 +354,11 @@
       function toggleMenu() {
         document.getElementById('nav-links').classList.toggle('open');
       }
-    </script>
+
+      window.addEventListener('load', function() {
+        document.querySelector('nav').style.paddingTop = 'env(safe-area-inset-top)';
+      }
+                             );
 
     
   </body>
