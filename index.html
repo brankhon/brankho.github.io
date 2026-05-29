@@ -13,6 +13,7 @@
         font-family: 'JetBrains Mono', monospace;
         margin: 0;
         padding: 2rem;
+        padding-top: calc(52px + env(safe-area-inset-top) + 2rem);
       }
       
       h1 {
@@ -136,16 +137,17 @@
       }
 
       nav {
-        position: sticky;
+        position: fixed;
         top: 0;
+        left: 0;
+        right: 0;
         z-index: 1000;
         background: #0a0e0a;
         border-bottom: 1px solid #1e2e1e;
         padding:
           env(safe-area-inset-top)
           2rem
-          0
-          2rem;
+          0;
         display: flex;
         align-items: center;
         justify-content: space-between;
